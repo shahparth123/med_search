@@ -12,8 +12,8 @@ import json
 global_data=list()
 # creates a Flask application, named app
 app = Flask(__name__,static_url_path='', 
-            static_folder='static',
-            template_folder='templates')
+            static_folder='/root/static',
+            template_folder='/root/templates')
 
 # a route where we will display a welcome message via an HTML template
 @app.route("/")
@@ -31,7 +31,7 @@ def refresh():
     global global_data
     all_data=list()
 
-    path_to_files = os.path.join( 'static','data','*',"*","00*.json")
+    path_to_files = os.path.join('/','root', 'static','data','*',"*","00*.json")
     for filename in sorted(glob.glob(path_to_files)):
         with open(filename) as f:
             print(filename)
@@ -115,4 +115,4 @@ def searchmultipleand(words):
 # run the application
 if __name__ == "__main__":
     global_data=[]  
-    app.run(debug=True)
+    app.run(debug=False)
