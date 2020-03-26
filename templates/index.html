@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GENX</title>
+    <meta name="description" content="Ultimate Corona Search Engine">
+    <meta name="keywords" content="Corona, Search, Biology, Research">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  <!-- START: header -->
+  
+  <div class="probootstrap-loader"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container">
+        <a href="index.html" class="probootstrap-logo">GenX<span>.</span></a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+  <!-- END: header -->
+  <section class="probootstrap-slider flexslider" style="
+  height: 300px;
+">
+    <div class="probootstrap-wrap-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+
+            <div class="probootstrap-home-search probootstrap-animate" style="margin-top: 110px; !important">
+              <form action="" method="post">
+                <h2 class="heading">Enter your queries here</h2>
+                <div class="probootstrap-field-group">
+                  <div class="probootstrap-fields">
+                    
+                    <div class="search-field" style="width: 100% !important">
+                      <i class="icon-search"></i>
+                      <input type="text" id="search_query" class="form-control" placeholder="Protin">
+                    </div>
+<!--                     <div class="search-category">
+                      <i class="icon-chevron-down"></i>
+                      <select name="#" id="" class="form-control">
+                        <option value="">For Rent</option>
+                        <option value="">For Sale</option>
+                      </select>
+                    </div>
+ -->                  </div>
+                  <button class="btn btn-success" id="search_btn"><i class="icon-magnifying-glass t2"></i> Search</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="slides">
+      <li style="background-image: url(img/slider_1.jpg);" class="overlay"></li>
+      <li style="background-image: url(img/slider_4.jpg);" class="overlay"></li>
+      <li style="background-image: url(img/slider_2.jpg);" class="overlay"></li>
+    </ul>
+  </section>
+  <!-- END: slider  -->
+
+  <!-- END: section -->
+
+  <section class="probootstrap-section probootstrap-section-lighter">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <style>
+            .keywords_label{
+              background: yellow;
+            }
+            </style>
+         <!--  <h4>Identified search keywords: <span id="keywords"> <span class="keywords_label">matabolites</span>,<span class="keywords_label">plants</span>,<span class="keywords_label">act</span>,<span class="keywords_label">anticancer</span>,<span class="keywords_label">substance</span></span></h4>
+         -->  <div class="table-responsive">
+  
+                  
+                <table id="example" class="table table-bordred table-striped">
+                     <thead>
+                       <tr>
+                         <th>Title</th>
+                         <th>URL</th>
+                       </tr>
+                     </thead>
+                     <tbody></tbody>
+            
+  </table>
+
+                  
+              </div>
+              
+          </div>
+    </div>
+  </div>
+
+  
+
+  </section>
+
+  <!-- END: section -->
+
+
+  <footer class="probootstrap-footer probootstrap-bg" style="background-image: url(img/slider_3.jpg)">
+    <div class="container">
+      <div class="row mb60">
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget">
+            <h4 class="heading">About GENX</h4>
+            <p>Ultimate AI enabled search engine for medical research data </p>
+            <p><a href="#">Read more...</a></p>
+          </div> 
+        </div>
+        <div class="col-md-6">
+          <div class="probootstrap-footer-widget probootstrap-link-wrap">
+            <h4 class="heading">Quick Links</h4>
+            <ul class="stack-link">
+              <li><a href="https://pages.semanticscholar.org/coronavirus-research">COVID 19 Open Research Dataset</a></li>
+              <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov">WHO COVID19</a></li>
+            
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget probootstrap-link-wrap">
+            <h4 class="heading">Contact Us:</h4>
+            <p></p>
+            <form action="#">
+              <div class="form-field">
+                <input type="text" class="form-control" placeholder="Enter your email">
+                <button class="btn btn-subscribe">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+        <div class="col-md-12">
+          <div class="probootstrap-footer-widget">
+            <p>&copy; 2017 <a href="https://parthhosting.com/">COVID19 Research Team</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+  </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+$(document).ready(function() {
+
+  jQuery("#search_btn").click(function(e){e.preventDefault();
+    jQuery.ajax({
+                            url: "/searchmultipleand/"+jQuery("#search_query").val(),
+                            method: "GET",
+                            dataType:"JSON",
+                            success: function (response) {
+                                //alert(response);
+                                //jQuery("#templates").html(response);
+                                //location.reload();
+                                $("#example").dataTable().fnDestroy()
+
+                                $('#example').DataTable({data:response,columns:[
+                                  {"data":"title"},
+                                  {"data":"path"}
+                              ]});
+                            }
+
+                        });
+  });
+
+} );</script>
+  </body>
+</html>
