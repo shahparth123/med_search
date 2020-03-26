@@ -31,7 +31,7 @@ def refresh():
     global global_data
     all_data=list()
 
-    path_to_files = os.path.join('/','root', 'static','data','*',"*","00*.json")
+    path_to_files = os.path.join('/','root', 'static','data',"*","00*.json")
     for filename in sorted(glob.glob(path_to_files)):
         with open(filename) as f:
             print(filename)
