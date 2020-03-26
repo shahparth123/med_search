@@ -95,7 +95,7 @@ def searchmultipleand(words):
             title = paper['metadata']['title']
             flag=1
             for item in word:
-                x = re.search("\b"+item.lower()+"\b", title.lower())
+                x = re.search(r"\b"+item.lower()+r"\b", title.lower())
                 if(x):
                     pass
                 else:
