@@ -31,7 +31,7 @@ def refresh():
     global global_data
     all_data=list()
 
-    path_to_files = os.path.join('/','root', 'static','data',"*","00*.json")
+    path_to_files = os.path.join('/','root', 'static','data',"*","*.json")
     for filename in sorted(glob.glob(path_to_files)):
         with open(filename) as f:
             print(filename)
@@ -51,7 +51,7 @@ def search(word):
         print(len(global_data))
         for paper in global_data:
             title = paper['metadata']['title']
-            x = re.search(word, title)
+            x = re.search(word.lower(), title.lower())
             print(x)
             if(x):
                 result={
@@ -72,7 +72,7 @@ def searchmultipleor(words):
             results[item]=[]
             for paper in global_data:
                 title = paper['metadata']['title']
-                x = re.search(item, title)
+                x = re.search(item.lower(), title.lower())
                 print(x)
                 if(x):
                     result={
@@ -95,7 +95,7 @@ def searchmultipleand(words):
             title = paper['metadata']['title']
             flag=1
             for item in word:
-                x = re.search(item, title)
+                x = re.search(item.lower(), title.lower())
                 if(x):
                     pass
                 else:
