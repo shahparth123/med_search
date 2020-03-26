@@ -14,4 +14,5 @@ COPY static ~/
 # tell the port number the container should expose
 EXPOSE 5000
 # run the application
-CMD ["python3", "~/search_server.py"]
+#CMD ["python3", "~/search_server.py"]
+CMD ["/bin/bash"]
