@@ -109,6 +109,33 @@ def searchmultipleand(words):
                 results.append(result)
         return jsonify(results)
 
+@app.route('/searchmultiplecountry/<words>', methods=['GET'])
+def searchmultipleand(words):
+    global global_data
+    country={}
+    if request.method == 'GET':
+        word = words.split(" ")
+        print(word)
+        results=[]
+        for paper in global_data:
+            title = paper['metadata']['title']
+            flag=1
+            for item in word:
+                x = re.search(r"\b"+item.lower()+r"\b", title.lower())
+                if(x):
+                    pass
+                else:
+                    flag=0
+            if(flag==1):    
+                try:
+
+                    if paper['metadata']['authors'][0]['affiliation']['location']['country'] in country.keys():
+                        country[paper['metadata']['authors'][0]['affiliation']['location']['country']]=country[paper['metadata']['authors'][0]['affiliation']['location']['country']] + 1
+                    else:
+                        country[paper['metadata']['authors'][0]['affiliation']['location']['country']]=1
+                except:
+                    pass
+        return jsonify(country)
 
 
 
