@@ -110,7 +110,7 @@ def searchmultipleand(words):
         return jsonify(results)
 
 @app.route('/searchmultiplecountry/<words>', methods=['GET'])
-def searchmultipleand(words):
+def searchmultiplecountry(words):
     global global_data
     country={}
     if request.method == 'GET':
