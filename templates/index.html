@@ -3,179 +3,261 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GENX</title>
+    <title>DeepMine</title>
     <meta name="description" content="Ultimate Corona Search Engine">
     <meta name="keywords" content="Corona, Search, Biology, Research">
     
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-merged.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https:////cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+      /*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+
+.search_box{
+  margin-top:25px;
+  margin-bottom:25px;
+}
+    </style>
   </head>
   <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
 
-  <!-- START: header -->
-  
-  <div class="probootstrap-loader"></div>
+        <div class="cover-container">
 
-  <header role="banner" class="probootstrap-header">
-    <div class="container">
-        <a href="index.html" class="probootstrap-logo">GenX<span>.</span></a>
-        
-        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
-        <div class="mobile-menu-overlay"></div>
-
-        <nav role="navigation" class="probootstrap-nav hidden-xs">
-          <ul class="probootstrap-main-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-    </div>
-  </header>
-  <!-- END: header -->
-  <section class="probootstrap-slider flexslider" style="
-  height: 300px;
-">
-    <div class="probootstrap-wrap-banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-
-            <div class="probootstrap-home-search probootstrap-animate" style="margin-top: 110px; !important">
-              <form action="" method="post">
-                <h2 class="heading">Enter your queries here</h2>
-                <div class="probootstrap-field-group">
-                  <div class="probootstrap-fields">
-                    
-                    <div class="search-field" style="width: 100% !important">
-                      <i class="icon-search"></i>
-                      <input type="text" id="search_query" class="form-control" placeholder="Protin">
-                    </div>
-<!--                     <div class="search-category">
-                      <i class="icon-chevron-down"></i>
-                      <select name="#" id="" class="form-control">
-                        <option value="">For Rent</option>
-                        <option value="">For Sale</option>
-                      </select>
-                    </div>
- -->                  </div>
-                  <button class="btn btn-success" id="search_btn"><i class="icon-magnifying-glass t2"></i> Search</button>
-                </div>
-              </form>
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">DeepMINE</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
             </div>
-
           </div>
-        </div>
-      </div>
-    </div>
-    <ul class="slides">
-      <li style="background-image: url(img/slider_1.jpg);" class="overlay"></li>
-      <li style="background-image: url(img/slider_4.jpg);" class="overlay"></li>
-      <li style="background-image: url(img/slider_2.jpg);" class="overlay"></li>
-    </ul>
-  </section>
-  <!-- END: slider  -->
 
-  <!-- END: section -->
-
-  <section class="probootstrap-section probootstrap-section-lighter">
-    <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-            <style>
-            .keywords_label{
-              background: yellow;
-            }
-            </style>
-         <!--  <h4>Identified search keywords: <span id="keywords"> <span class="keywords_label">matabolites</span>,<span class="keywords_label">plants</span>,<span class="keywords_label">act</span>,<span class="keywords_label">anticancer</span>,<span class="keywords_label">substance</span></span></h4>
-         -->  <div class="table-responsive">
-  
-                  
-                <table id="example" class="table table-bordred table-striped">
-                     <thead>
-                       <tr>
-                         <th>Title</th>
-                         <th>URL</th>
-                       </tr>
-                     </thead>
-                     <tbody></tbody>
-            
-  </table>
-
+          <div class="inner cover">
+            <h1 class="cover-heading">DeepMINE</h1>
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-12 col-lg-12 search_box">
+                              <input id="search_query" class="form-control form-control-lg form-control-borderless " type="search" placeholder="Search topics or keywords">
                   
               </div>
+              <!--end of col-->
+          </div>
+              <p class="lead">
+            
+              <a href="#" id="search_btn" class="btn btn-lg btn-success">Search</a>
+            </p>
+
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-12 col-lg-12">
+                <div class="table-responsive">
+  
+                  
+                  <table id="example" class="table table-bordred table-striped">
+                       <thead>
+                         <tr>
+                           <th>Title</th>
+                           <th>URL</th>
+                         </tr>
+                       </thead>
+                       <tbody></tbody>
               
-          </div>
-    </div>
-  </div>
-
-  
-
-  </section>
-
-  <!-- END: section -->
-
-
-  <footer class="probootstrap-footer probootstrap-bg" style="background-image: url(img/slider_3.jpg)">
-    <div class="container">
-      <div class="row mb60">
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">About GENX</h4>
-            <p>Ultimate AI enabled search engine for medical research data </p>
-            <p><a href="#">Read more...</a></p>
-          </div> 
-        </div>
-        <div class="col-md-6">
-          <div class="probootstrap-footer-widget probootstrap-link-wrap">
-            <h4 class="heading">Quick Links</h4>
-            <ul class="stack-link">
-              <li><a href="https://pages.semanticscholar.org/coronavirus-research">COVID 19 Open Research Dataset</a></li>
-              <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov">WHO COVID19</a></li>
-            
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget probootstrap-link-wrap">
-            <h4 class="heading">Contact Us:</h4>
-            <p></p>
-            <form action="#">
-              <div class="form-field">
-                <input type="text" class="form-control" placeholder="Enter your email">
-                <button class="btn btn-subscribe">Send</button>
+    </table>
               </div>
-            </form>
+              <!--end of col-->
           </div>
-        </div>
-      </div>
-      <div class="row copyright">
-        <div class="col-md-12">
-          <div class="probootstrap-footer-widget">
-            <p>&copy; 2017 <a href="https://parthhosting.com/">COVID19 Research Team</a></p>
           </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
+
         </div>
+
       </div>
+
     </div>
-  </footer>
 
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
-  </div>
-  
 
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="js/scripts.min.js"></script>
-  <script src="js/main.min.js"></script>
-  <script src="js/custom.js"></script>
       <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script>
 $(document).ready(function() {
