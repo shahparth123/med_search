@@ -9,6 +9,7 @@ from flask import Flask, redirect, url_for, request,render_template,jsonify
 path = 'demo'
 import glob
 import json
+import base64
 global_data=list()
 # creates a Flask application, named app
 app = Flask(__name__,static_url_path='', 
@@ -103,10 +104,41 @@ def searchmultipleand(words):
             if(flag==1):    
                 result={
                     "title":paper['metadata']['title'],
-                    "path":paper['path']
+                    "path":base64.b64encode(paper['path']),
+                    
                 }
                 results.append(result)
         return jsonify(results)
+
+@app.route('/getdetail/<path>', methods=['GET'])
+def getdetail(path):
+    if request.method == 'GET':
+        return render_template('getdetail.html', message=path)
+
+@app.route('/getdetailapi/<path>', methods=['GET'])
+def getdetailapi(path):
+    if request.method == 'GET':
+        filepath=base64.b64decode(path)
+        with open(filepath) as f:
+            #print(filename)
+            paper = json.load(f)
+            abs_txt=""
+            for abs in paper['abstract']:
+                abs_txt=abs_txt+" "+ abs['text']
+            body_txt=""
+            for body in paper['body_text']:
+                body_txt=body_txt+" "+ body['text']
+            
+            result= {
+                    "title":paper['metadata']['title'],
+                    "path":paper['path'],
+                    "abs":abs_txt,
+                    "body":body_txt
+                }
+                
+        return jsonify(result)
+
+
 
 @app.route('/searchmultiplecountry/<words>', methods=['GET'])
 def searchmultiplecountry(words):
