@@ -257,7 +257,7 @@ $(document).ready(function() {
              l='';               
                                   for (var i = 0, len = response.length; i < len; ++i) {
         var listing = response[i];
-        l=l+                  '<a href="#" filepath="'+listing.path+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+        l=l+                  '<a href="/getdetail/'+listing.path+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
                     '<div class="d-flex w-100 justify-content-between">'+
                       '<h5 class="mb-1">'+listing.title+'</h5>'+
                       '                    </div>'+
