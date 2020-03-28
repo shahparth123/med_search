@@ -103,7 +103,7 @@ def searchmultipleand(words):
                     flag=0
             if(flag==1):   
                 message_bytes = paper['path'].encode('ascii')
-                message_bytes = message.encode(message_bytes)
+                base64_bytes=message_bytes.b64encode(message_bytes)
                 base64_message = base64_bytes.decode('ascii')
 
  
