@@ -129,12 +129,11 @@ def getdetailapi(path):
             for body in paper['body_text']:
                 body_txt=body_txt+" "+ body['text']
             
-            result= {
+            result= [{
                     "title":paper['metadata']['title'],
                     "path":filepath,
-                    "abs":abs_txt,
-                    "body":body_txt
-                }
+                    "abs":abs_txt
+                }]
                 
         return jsonify(result)
 
