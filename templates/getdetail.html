@@ -217,6 +217,7 @@ body {
             </div>
             <div class="row justify-content-center">
               <div class="col-12 col-md-12 col-lg-12">
+                  <h2 id="title"></h2>
                 <div class="list-group" id="items">
 
                 </div>
@@ -243,7 +244,10 @@ $(document).ready(function() {
                             method: "GET",
                             dataType:"JSON",
                             success: function (response) {
-                                jQuery("#items").html(response);
+                                console.log(response);
+
+                                jQuery("#title").html(response.title);
+                                jQuery("#items").html(response.abs);
                                   
                             }
                         });
