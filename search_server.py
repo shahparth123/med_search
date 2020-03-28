@@ -104,7 +104,6 @@ def searchmultipleand(words):
                 result={
                     "title":paper['metadata']['title'],
                     "path":paper['path']
-
                 }
                 results.append(result)
         return jsonify(results)

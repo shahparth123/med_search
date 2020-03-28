@@ -53,12 +53,11 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #ffffff;/*#333;*/
 }
 body {
-  color: #fff;
+  color: #000000;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -104,21 +103,20 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: #000000; /* IE8 proofing */
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: #000000;
+  border-bottom-color: rgb(0,0,0);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #000000;
+  border-bottom-color: #000000;
 }
 
 @media (min-width: 768px) {
@@ -170,7 +168,7 @@ body {
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
-    vertical-align: middle;
+    vertical-align: top;
   }
   /* Handle the widths */
   .masthead,
@@ -202,7 +200,6 @@ body {
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">DeepMINE</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
@@ -226,26 +223,15 @@ body {
               <a href="#" id="search_btn" class="btn btn-lg btn-success">Search</a>
             </p>
 
+            
+            </div>
             <div class="row justify-content-center">
               <div class="col-12 col-md-12 col-lg-12">
-                <div class="table-responsive">
-  
-                  
-                  <table id="example" class="table table-bordred table-striped">
-                       <thead>
-                         <tr>
-                           <th>Title</th>
-                           <th>URL</th>
-                         </tr>
-                       </thead>
-                       <tbody></tbody>
-              
-    </table>
-              </div>
-              <!--end of col-->
-          </div>
-          </div>
+                <div class="list-group" id="items">
 
+                </div>
+              </div>
+            </div>
           <div class="mastfoot">
             <div class="inner">
             </div>
@@ -268,15 +254,21 @@ $(document).ready(function() {
                             method: "GET",
                             dataType:"JSON",
                             success: function (response) {
-                                //alert(response);
-                                //jQuery("#templates").html(response);
-                                //location.reload();
-                                $("#example").dataTable().fnDestroy()
+             l='';               
+                                  for (var i = 0, len = response.length; i < len; ++i) {
+        var listing = response[i];
+        l=l+                  '<a href="#" filepath="'+listing.path+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+                    '<div class="d-flex w-100 justify-content-between">'+
+                      '<h5 class="mb-1">'+listing.title+'</h5>'+
+                      '                    </div>'+
+                      '                  </a>';
 
-                                $('#example').DataTable({data:response,columns:[
-                                  {"data":"title"},
-                                  {"data":"path"}
-                              ]});
+
+    }
+
+    jQuery("#items").html(l);
+
+
                             }
 
                         });
