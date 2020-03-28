@@ -101,10 +101,15 @@ def searchmultipleand(words):
                     pass
                 else:
                     flag=0
-            if(flag==1):    
+            if(flag==1):   
+                message_bytes = paper['path'].encode('ascii')
+                message_bytes = message.encode(message_bytes)
+                base64_message = base64_bytes.decode('ascii')
+
+ 
                 result={
                     "title":paper['metadata']['title'],
-                    "path":base64.b64encode(paper['path']),
+                    "path":base64_message,
                     
                 }
                 results.append(result)
@@ -118,7 +123,10 @@ def getdetail(path):
 @app.route('/getdetailapi/<path>', methods=['GET'])
 def getdetailapi(path):
     if request.method == 'GET':
-        filepath=base64.b64decode(path)
+
+        base64_bytes = path.encode('ascii')
+        message_bytes = base64.b64decode(base64_bytes)
+        filepath = message_bytes.decode('ascii')
         with open(filepath) as f:
             #print(filename)
             paper = json.load(f)
@@ -129,11 +137,11 @@ def getdetailapi(path):
             for body in paper['body_text']:
                 body_txt=body_txt+" "+ body['text']
             
-            result= [{
+            result= {
                     "title":paper['metadata']['title'],
                     "path":filepath,
                     "abs":abs_txt
-                }]
+                }
                 
         return jsonify(result)
 
