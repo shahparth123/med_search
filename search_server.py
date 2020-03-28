@@ -131,7 +131,7 @@ def getdetailapi(path):
             
             result= {
                     "title":paper['metadata']['title'],
-                    "path":paper['path'],
+                    "path":filepath,
                     "abs":abs_txt,
                     "body":body_txt
                 }
