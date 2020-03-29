@@ -110,7 +110,6 @@ def searchmultipleand(words):
                 result={
                     "title":paper['metadata']['title'],
                     "path":base64_message,
-                    
                 }
                 results.append(result)
         return jsonify(results)
@@ -119,6 +118,11 @@ def searchmultipleand(words):
 def getdetail(path):
     if request.method == 'GET':
         return render_template('getdetail.html', message=path)
+
+@app.route('/contact', methods=['GET'])
+def contact():
+    if request.method == 'GET':
+        return render_template('contact.html')
 
 @app.route('/getdetailapi/<path>', methods=['GET'])
 def getdetailapi(path):

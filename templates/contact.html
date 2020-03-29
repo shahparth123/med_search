@@ -89,7 +89,9 @@ body {
 .inner {
   padding: 7px;
 }
-
+.text-info {
+  color:black;
+}
 
 /*
  * Header
@@ -155,7 +157,7 @@ nav {
   max-height: 570px;
 }
 .title{
-  text-align: left;
+  text-align: justify;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -232,9 +234,8 @@ nav {
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -245,38 +246,35 @@ nav {
           <div class="inner cover">
           
             <h1 class="cover-heading"><img src="/img/deepmine_logo.png"></h1>
-            <div class="row justify-content-center">
-              <div class="col-md-offset-3 col-6 col-md-6 col-lg-6 search_box offset-3 mx-auto">
-                <input id="search_query" class="form-control form-control-lg form-control-borderless " type="search" placeholder="Search topics or keywords">
-  
-              </div>
-              <!--end of col-->
-            </div>
-            <p class="lead">
-  
-              <a href="#" id="search_btn" class="btn btn-lg btn-success">Search</a>
-            </p>
-  
+            
+           
   
           </div>
   
         </div>
+      </div>
+      <div class="container">
+        
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-12">
-            <div class="text-wrapper">
-              <h2 id="title" class="title">
+            <h2 id="title" class="title">
+              About deepMINE
+            </h2>
+            <p class="lead"></p>
+            <div class="list-group text-info" id="items">
+              
 
-              </h2>
-              <div class="list-group text-info" id="items">
-
-              </div>
+              The system is designed and developed solely for the purpose for contributing to the research community working hard for fighting against current pandemic situations. The system uses CORD-19 (pages.semanticscholar.org/) dataset published by Allen Institute of AI on 20th March, 2020. The system is neither doing nor encouraging any commercial use. It is solely for the research purpose.
+              
+              We observed that the dataset contains pre-prints articles, so the final research paper published in any peer-reviewed journal and the content available on deepMINE can defer. However, for any of the applications of AI and NLP and/or generating brief technical summary from one or more than one research articles researcher can contact us any time.
+              
+              The current system can be upgraded with changes in machine learning, NLP and AI algorithms keeping user research interests as an only objective.
             </div>
+          
           </div>
+
         </div>
-        <div class="mastfoot">
-          <div class="inner">
-          </div>
-        </div>
+
 
       </div>
 
@@ -284,38 +282,6 @@ nav {
 
   </div>
 
-
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script>
-    $(document).ready(function() {
-
-      jQuery("#search_btn").click(function(e){e.preventDefault();
-        jQuery.ajax({
-          url: "/searchmultipleand/"+jQuery("#search_query").val(),
-          method: "GET",
-          dataType:"JSON",
-          success: function (response) {
-           l='';
-           for (var i = 0, len = response.length; i < len; ++i) {
-            var listing = response[i];
-            l=l+                  '<a href="/getdetail/'+listing.path+'" class="list-group-item d-flex justify-content-between align-items-center clearfix">'+
-            ''+
-            ''+listing.title+'     <span class="pull-right badge badge-primary badge-pill">View Abstract</span>'+
-            ''+
-            '                  </a>';
-
-
-          }
-          jQuery(".title").html("Total "+response.length+ " results found.");
-
-          jQuery("#items").html(l);
-
-
-        }
-
-      });
-      });
-
-    } );</script>
+  
   </body>
   </html>

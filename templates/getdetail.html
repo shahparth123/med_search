@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DeepMine</title>
-    <meta name="description" content="Ultimate Corona Search Engine">
-    <meta name="keywords" content="Corona, Search, Biology, Research">
-    
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepMine</title>
+  <meta name="description" content="Ultimate Corona Search Engine">
+  <meta name="keywords" content="Corona, Search, Biology, Research">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https:////cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https:////cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
       <script src="js/vendor/respond.min.js"></script>
@@ -28,10 +28,10 @@
  * Globals
  */
 
-/* Links */
-a,
-a:focus,
-a:hover {
+ /* Links */
+ a,
+ a:focus,
+ a:hover {
   color: #fff;
 }
 
@@ -50,8 +50,8 @@ a:hover {
  * Base structure
  */
 
-html,
-body {
+ html,
+ body {
   height: 100%;
   background-color: #ffffff;/*#333;*/
 }
@@ -66,8 +66,8 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+ /*  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+ box-shadow: inset 0 0 100px rgba(0,0,0,.5); */
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -78,20 +78,32 @@ body {
   margin-left: auto;
 }
 
-/* Padding for spacing */
-.inner {
-  padding: 30px;
+.menu{
+  background-color: #eee;
+  overflow: hidden;
+  height: 52px;
+  box-shadow: -6px -5px 8px 6px #d2d2d2;
 }
 
+/* Padding for spacing */
+.inner {
+  padding: 7px;
+}
+.text-info {
+  color:black;
+}
 
 /*
  * Header
  */
-.masthead-brand {
+ .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+nav {
+  text-align: right;
+}
 .masthead-nav > li {
   display: inline-block;
 }
@@ -123,9 +135,6 @@ body {
   .masthead-brand {
     float: left;
   }
-  .masthead-nav {
-    float: right;
-  }
 }
 
 
@@ -133,20 +142,34 @@ body {
  * Cover
  */
 
-.cover {
+ .cover {
   padding: 0 20px;
+  padding-top:60px
 }
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
-
+.text-wrapper{
+  box-shadow: 0px 0 14px -6px #b7b7b7;
+  padding:12px;
+  overflow: auto;
+  max-height: 570px;
+}
+.title{
+  text-align: justify;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.text-info{
+  text-align:justify
+}
 
 /*
  * Footer
  */
 
-.mastfoot {
+ .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
 }
@@ -156,7 +179,7 @@ body {
  * Affix and center
  */
 
-@media (min-width: 768px) {
+ @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
@@ -190,68 +213,85 @@ body {
   margin-top:25px;
   margin-bottom:25px;
 }
-    </style>
-  </head>
-  <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
+</style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+       <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+      </div>
+      <div class="container">
+        <div class="row">
           <div class="inner cover">
-            <h1 class="cover-heading">DeepMINE</h1>
+          
+            <h1 class="cover-heading"><img src="/img/deepmine_logo.png"></h1>
             
+           
+  
+          </div>
+  
+        </div>
+      </div>
+      <div class="container">
+        
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-12 col-lg-12">
+            <h2 id="title" class="title">
 
-            
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-12 col-lg-12">
-                  <h2 id="title"></h2>
-                <div class="list-group" id="items">
+            </h2>
+            <p class="lead">Abstract:</p>
+            <div class="list-group text-info" id="items">
 
-                </div>
-              </div>
             </div>
-          <div class="mastfoot">
-            <div class="inner">
-            </div>
+          
           </div>
 
         </div>
+
 
       </div>
 
     </div>
 
+  </div>
 
-      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script>
-$(document).ready(function() {
-
-    jQuery.ajax({
-                            url: "/getdetailapi/"+'{{message}}',
-                            method: "GET",
-                            dataType:"JSON",
-                            success: function (response) {
-                                console.log(response);
-
-                                jQuery("#title").html(response.title);
-                                jQuery("#items").html(response.abs);
-                                  
-                            }
-                        });
-  });
-</script>
+    $(document).ready(function() {
+    
+        jQuery.ajax({
+                                url: "/getdetailapi/"+'{{message}}',
+                                method: "GET",
+                                dataType:"JSON",
+                                success: function (response) {
+                                    console.log(response);
+    
+                                    jQuery("#title").html(response.title);
+                                    jQuery("#items").html(response.abs);
+                                      
+                                }
+                            });
+      });
+    </script>
   </body>
-</html>
+  </html>
