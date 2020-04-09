@@ -27,6 +27,16 @@ def hello():
 }) """
     return render_template('index.html', message=message)
 
+@app.route('/refreshsingle', methods=['GET'])
+def refreshingle():
+    global global_data
+    all_data=list()
+
+    filename = os.path.join('/','root', 'static','data',"refresh.json")
+    with open(filename) as f:
+    	global_data=json.load(f)
+    return jsonify({"succes":"true"})
+
 @app.route('/refresh', methods=['GET'])
 def refresh():
     global global_data
