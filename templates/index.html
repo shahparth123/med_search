@@ -16,6 +16,15 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163223459-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163223459-1');
+</script>
 
   <link rel="stylesheet" href="https:////cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!--[if lt IE 9]>
@@ -211,6 +220,10 @@ nav {
   margin-top:25px;
   margin-bottom:25px;
 }
+
+.navbar-brand{
+  color:red !important;
+}
 </style>
 </head>
 <body>
@@ -229,7 +242,7 @@ nav {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
+            <div class="navbar-brand text-danger">Due to Technical Difficulties Text Summarization is Temporarily Disabled.  We will serve as Early as Possible</div>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="/">Home</a></li>
